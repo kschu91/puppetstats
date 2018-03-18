@@ -94,4 +94,4 @@ It has minimum dependencies and is mostly written in native ruby.
 
 ## Development
 
-If you find any defects or want to raise a feature request, [create an issue on Github](https://github.com/kschu91/puppet-puppetstats/issues/new) and let me know.
+If you find any defects or want to raise a feature request, [create an issue on Github](https://github.com/kschu91/puppetstats/issues/new) and let me know.
