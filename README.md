@@ -1,5 +1,10 @@
 # puppetstats
 
+[![Build Status](https://travis-ci.org/kschu91/puppetstats.svg?branch=master)](https://travis-ci.org/kschu91/puppetstats)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/kschu91/puppetstats.svg)](https://forge.puppetlabs.com/kschu91/puppetstats)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/kschu91/puppetstats.svg)](https://forge.puppetlabs.com/kschu91/puppetstats)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/kschu91/puppetstats.svg)](https://forge.puppetlabs.com/kschu91/puppetstats)
+
 #### Table of Contents
 
 1. [Description](#description)
