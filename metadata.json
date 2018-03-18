@@ -1,0 +1,28 @@
+{
+  "name": "kschu91-puppetstats",
+  "version": "0.1.0",
+  "author": "kschu91",
+  "summary": "Enables anonymous statistics for puppet modules. A service provided by puppetstats.com.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/kschu91/puppetstats.git",
+  "project_page": "https://github.com/kschu91/puppetstats",
+  "issues_url": "https://github.com/kschu91/puppetstats/issues",
+  "tags": [
+    "statistics",
+    "analytics",
+    "data"
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.0 < 5.0.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0 < 5.0.0"
+    }
+  ],
+  "data_provider": null
+}

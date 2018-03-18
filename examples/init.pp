@@ -1,0 +1,1 @@
+puppetstats { 'username-modulename': }
