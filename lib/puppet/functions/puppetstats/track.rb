@@ -1,10 +1,10 @@
 Puppet::Functions.create_function(:'puppetstats::track') do
-  dispatch :module do
+  dispatch :track do
     param 'String', :fqmn
     param 'String', :module_name
   end
 
-  def module(fqmn, module_name)
+  def track(fqmn, module_name)
     require 'net/http'
     require 'uri'
     require 'json'
