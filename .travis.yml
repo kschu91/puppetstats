@@ -1,23 +1,22 @@
----
 language: ruby
-bundler_args: --without system_tests --full-index
+bundler_args: "--without system_tests --full-index"
 before_install: rm Gemfile.lock || true
-script: ["bundle exec rake test"]
+script:
+- bundle exec rake test
 rvm:
-  - 2.1
-  - 2.2
-  - 2.3.0
+- 2.1
+- 2.2
+- 2.3.0
 env:
-  - PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
-  - PUPPET_GEM_VERSION="~> 4.9.0" STRICT_VARIABLES=yes
-  - PUPPET_GEM_VERSION="~> 5.4.0" STRICT_VARIABLES=yes
+- PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
+- PUPPET_GEM_VERSION="~> 4.9.0" STRICT_VARIABLES=yes
+- PUPPET_GEM_VERSION="~> 5.4.0" STRICT_VARIABLES=yes
 deploy:
   provider: puppetforge
   user: kschu91
   password:
-    secure: cwYlCnNUj/Df6JC8wjvu2DWF9K7MkLPYRHp8Cf21bEmj6gotIjPK9EFLoSmBelSanb1XWRd5PTvCcVPaD8sHpJ9n9D9tLzfFOwzgwjuveq54aIEqY+OMKf6s1IdFOSfx5iSXS8cX6DJ3fH7N/J7kNavghmPHA0ucHSj415j6kKS8K0ozoJAqbS0C2/niOxeg7I/RMix9Z61UpA1rNjLMVcl/Q6dlFUALVDVM8X8n2WL3lVH0iZIEeRJMSkgCI00iM8e8rVxccmaK5wkes/xyIH0o2UiFIIvlEOZIdOMtVoLNEdnov1rJ0v2Nyqc+HjFLGIQ61boPBG61ixwSEse8vVb6Z18NcjEeeQ8gVl4yUywgXZQdJ94TPUScfxJKN+kIJmOKuj+Q/Jlq+Eji/SmIr94xoNcZmD/v1ce709YPfYM46u3iKHDik5oINzJSj9myWCY9XE5r6Nkf5aRmWOAcgs0lbr0S/6oj/x1wCcvm3kO7ePpNHNcZSFS/qAuFer5c5F/dpoJ/ktecJ4GhCj06FY1iut4KzywerZC1j1Eej8G4VUMnbW4yk0E4fy3kFFUTCKBs3edrFlnfLu/uK0bwE4y5ua4feMKjQ6+y53LvsJ6+RlvaIhT2MehnNTCjVQgUgowq/x7yx+0356cM+qkRCdbLk+av/ikei3C1Fkj1/4k=
+    secure: eDBE3d+0VmmtGO+wFR088RYOrESOuRdA5qOjY8qdrN6dwCQxFXyaNIQ8UUr37rhlD4pm7c390N+Xour7jRVjbLcfF8VA5p3tRajYI1Wx4dB7ehmNNCBfdkXHc5nRz8jdCXBp5YjNuILRQXXaf4AjQfAscsuW3WFR4dSMpxsWubp2uBgyOGruOE3UJC3hiDbme2dYkT1cH/8etpZ4CTfyUasGe/8shRdvxbEFITesvTHrINeFsSIEslMQoKuYBx8mFXXDf/GFCpLlUip/H3sSwlX0APGV5JXILK3q8Awtht3peM0wlhiJxEfdCSMO05Lcs6SHk8jZXexXMrUE7A21otHwDJnwYMC1iVhCsZ4wxgKBStV5IHbeAxQGGORAwJROt+y8ElXlYHuWY3OwTF05VpaCpo9NtyO+9JRkBQZXqBgMkM4IV1CvZkbelsDXYBWXrq67i2ho6Ng+zVHB6KkV1YJCa2iJ/o327ueuPic/tLbZf+TmFGUiNfz1JGpK7LGgf3ZFCWUOLX8E6awm/gbRM1BVdcdHJfhOGh/cx6B5qswCvrUiizAhzR0UTpo9CojO2l6jbKPEhOcGHl6oOkMDV+GBQ9S9VfkwDH3oC8TwYiw1MVRI2Cc6VslZZBKiYNRT7YtH/Lw4SlADvBizqe0nA8Bskv6qSmRgbzQVJlaujGk=
   on:
     tags: true
-    # Only publish if our main Ruby target builds
     rvm: 2.1
     condition: $PUPPET_GEM_VERSION = "~> 5.4.0"
