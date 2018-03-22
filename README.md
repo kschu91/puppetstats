@@ -19,29 +19,32 @@
 
 ## Description
 
-Have you every ask yourself how many people are using your module in a specific puppet version or on a specific distribution?
+Have you every ask yourself how many systems are using your puppet module in a specific puppet version or on a specific distribution?
 This is exactly what [puppetstats.com](https://puppetstats.com) and this module is build for.
 
-This module enables the free service from [puppetstats.com](https://puppetstats.com). [puppetstats.com](https://puppetstats.com) allows to analyse
-anonymous usage statistics of puppet modules which can help you to optimize your module based on the usage.
-The puppetstats module is required to gather statistics about you module.
+This module enables the free service from [puppetstats.com](https://puppetstats.com) that allows you to analyse
+anonymous usage statistics of your puppet modules. This can help you to optimize your module based on the usage.
+
+> **Note**: To opt-out completely from puppetstats with your system just follow the [opt-out guide](https://puppetstats.com/opt-out).
 
 ## Setup
 
 ### What puppetstats affects
 
-When included, puppetstats module will send anonymous usage statistics to [puppetstats.com](https://puppetstats.com).
-You can sign up for free at [puppetstats.com](https://puppetstats.com) to see and analyse the statistics of your modules.
+The module will send anonymous usage statistics to [puppetstats.com](https://puppetstats.com).
+You can sign up for free at [puppetstats.com](https://puppetstats.com) to view and analyse the usage statistics of your modules.
 
 ### Beginning with puppetstats
 
 To get started just call the puppetstats module together with the full qualified module name of your puppet module. Eg. `puppetlabs-apache`.
 
     puppetstats { 'puppetlabs-apache': }
+    
+After including the puppetstats module into your module, simply go to [puppetstats.com](https://puppetstats.com) and register your module. You can also have a look into the [getting started guide](https://puppetstats.com/getting-started).
 
 ## Usage
 
-This is the common way of including puppetstats in your puppet module.
+The common way of including puppetstats in your puppet module, is to give your module users the ability to disable puppetstats if they want to.
 
     class yourfancymodule (
       Boolean $enable_puppetstats = true,
@@ -54,6 +57,8 @@ This is the common way of including puppetstats in your puppet module.
       ...
       
     }
+    
+> **Note**: To disable puppetstats system wide, just follow the [opt-out guide](https://puppetstats.com/opt-out).
 
 ## Reference
 
@@ -87,7 +92,7 @@ The `full_qualified_module_name` is filled with `$title` by default, which means
 However, if you want to use puppetstats like this:
 
     class { '::puppetstats':
-        full_qualified_module_name => 'company',
+        full_qualified_module_name => 'puppetlabs-apache',
         enabled => true
     }
 ... you need to specify `full_qualified_module_name`.
@@ -95,7 +100,7 @@ However, if you want to use puppetstats like this:
 ## Limitations
 
 The puppetstats module should work on each OS and distribution where puppet is running.
-It has minimum dependencies and is mostly written in native ruby.
+It has very minimum dependencies and is mostly written in native ruby.
 
 ## Development
 
