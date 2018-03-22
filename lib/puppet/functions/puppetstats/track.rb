@@ -62,9 +62,9 @@ Puppet::Functions.create_function(:'puppetstats::track') do
 
     case response.code.to_i
       when 200
-        Puppet.send('notice', "puppetstats anonymously tracked module '#{fqmn}' on system '#{unique_identifier}'")
+        Puppet.send('notice', "puppetstats anonymously tracked module '#{fqmn}' on system '#{unique_identifier}'. To disable tracking visit https://puppetstats.com/opt-out")
       else
-        Puppet.send('warning', "puppetstats anonymous tracking failed for module #{fqmn} with status code '#{response.code}':\n#{response.body}")
+        Puppet.send('warning', "puppetstats anonymous tracking failed for module #{fqmn} with status code '#{response.code}':\n#{response.body}. To disable tracking visit https://puppetstats.com/opt-out")
     end
   end
 end
