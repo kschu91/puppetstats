@@ -15,7 +15,7 @@ describe 'puppetstats' do
     }
   end
   context 'with fact puppetstats_disabled' do
-    let(:facts) {{'puppetstats_disabled' => true}}
+    let(:facts) {{:puppetstats_disabled => true}}
     it {
       expect(a_request(:post, 'https://puppetstats.com/api/modules/puppetstats')).not_to have_been_made
       is_expected.to contain_class('puppetstats')

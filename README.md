@@ -14,6 +14,7 @@
     * [Beginning with puppetstats](#beginning-with-puppetstats)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+1. [Testing when using puppetstats](#testing-when-using-puppetstats)
 1. [Limitations - OS compatibility, etc.](#limitations)
 1. [Development - Guide for contributing to the module](#development)
 
@@ -96,6 +97,23 @@ However, if you want to use puppetstats like this:
         enabled => true
     }
 ... you need to specify `full_qualified_module_name`.
+
+## Testing when using puppetstats
+
+### Unit Tests
+Simply define a new type under the `pre_condition`.
+
+    let(:pre_condition) { "define puppetstats($full_qualified_module_name=$title, $enabled) {}" }
+    
+A working example can be found in the [kschu91-gogs](https://github.com/kschu91/puppet-gogs/blob/master/spec/classes/init_spec.rb) module.
+
+### Functional/Acceptance Tests
+In functional or acceptance tests you should set the `puppetstats_disabled` fact,
+which prevents puppetstats from creating statistics with your tests.
+
+    let(:facts) {{:puppetstats_disabled => true}}
+    
+A working example can be found in the [kschu91-gogs](https://github.com/kschu91/puppet-gogs/blob/master/spec/acceptance/gogs_spec.rb) module.
 
 ## Limitations
 
