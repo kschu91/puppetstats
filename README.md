@@ -82,28 +82,12 @@ module the ability to disable puppetstats statistics. For example:
       
     }
 
-### full_qualified_module_name
-
-The `full_qualified_module_name` is filled with `$title` by default, which means when you use it like this:
-
-    puppetstats { 'puppetlabs-apache': }
-    
-... you do not need to specify `full_qualified_module_name` explicitly.
-
-However, if you want to use puppetstats like this:
-
-    class { '::puppetstats':
-        full_qualified_module_name => 'puppetlabs-apache',
-        enabled => true
-    }
-... you need to specify `full_qualified_module_name`.
-
 ## Testing when using puppetstats
 
 ### Unit Tests
 Simply define a new type under the `pre_condition`.
 
-    let(:pre_condition) { "define puppetstats($full_qualified_module_name=$title, $enabled) {}" }
+    let(:pre_condition) { "define puppetstats($enabled) {}" }
     
 A working example can be found in the [kschu91-gogs](https://github.com/kschu91/puppet-gogs/blob/master/spec/classes/init_spec.rb) module.
 

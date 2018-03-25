@@ -3,6 +3,7 @@
 - Feature: Generate unique system hash based on puppet server name and node name, if not in serverless mode
 - Improvement: More resilient behaviour if no version is present
 - Improvement: Optimize notices and warnings
+- Removed parameter full_qualified_module_name
 
 ## 2018-03-24 Release 0.2.0
 Feature: support for opt-out with `puppetstats_disabled` fact, which allows to disable puppetstats on a whole server/environment/node
