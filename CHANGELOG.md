@@ -1,3 +1,7 @@
+## 2018-09-22 Release 0.3.1
+- Bugfix: Do not show any warnings when module is disabled
+- Bugfix: Fail silently when sommething went wrong
+
 ## 2018-03-25 Release 0.3.0
 - Feature: Added differentiation for serverless vs. master puppet runs
 - Feature: Generate unique system hash based on puppet server name and node name, if not in serverless mode
