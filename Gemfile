@@ -1,6 +1,11 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['>= 3.3']
+if puppetversion = ENV['PUPPET_GEM_VERSION']
+  gem 'puppet', puppetversion, :require => false
+else
+  gem 'puppet', :require => false
+end
+
 gem 'metadata-json-lint'
 gem 'puppet', puppetversion
 gem 'puppetlabs_spec_helper', '>= 1.2.0'
@@ -17,3 +22,4 @@ else
   # rubocop requires ruby >= 1.9
   gem 'rubocop'
 end
+
