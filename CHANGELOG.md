@@ -4,7 +4,6 @@
 - Bugfix: Fixes tests so that they are using the correct puppetversions
 - Remove support for puppet 2.7.0 and 3.8.0 - it has never worked anyways
 
-
 ## 2018-03-25 Release 0.3.0
 - Feature: Added differentiation for serverless vs. master puppet runs
 - Feature: Generate unique system hash based on puppet server name and node name, if not in serverless mode
