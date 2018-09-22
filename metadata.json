@@ -1,6 +1,6 @@
 {
   "name": "kschu91-puppetstats",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "kschu91",
   "summary": "Enables anonymous usage statistics for puppet modules. A service provided by puppetstats.com.",
   "license": "Apache-2.0",
@@ -100,7 +100,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 3.8.0 < 7.0.0"
+      "version_requirement": ">= 4.0.0 < 7.0.0"
     }
   ],
   "dependencies": [
