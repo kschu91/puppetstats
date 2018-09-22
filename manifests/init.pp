@@ -1,5 +1,5 @@
 define puppetstats (
-  Boolean $enabled = true
+  $enabled = true
 ) {
   if $facts['puppetstats_disabled'] == undef {
     if $caller_module_name == '' {
